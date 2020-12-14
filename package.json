@@ -1,0 +1,23 @@
+{
+  "name": "@von-development-studio/angular-form-validation",
+  "version": "1.0.3",
+  "description": "Angular Form Validation directives.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VON-Development-Studio/angular-form-validation"
+  },
+  "keywords": [
+    "angular",
+    "angular 11",
+    "form validation"
+  ],
+  "author": "Luis García Castro",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^11.0.3",
+    "@angular/core": "^11.0.3"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}
