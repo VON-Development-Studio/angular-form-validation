@@ -27,6 +27,7 @@ export abstract class VonFormValidationBase implements Validator {
 
   validate(formValue: FormControl): ValidationErrors {
     this.validator = this.getCustomValidators(formValue.value);
+    this.runValidation();
     return this.validator;
   }
 
@@ -55,6 +56,9 @@ export abstract class VonFormValidationBase implements Validator {
       labelText = this.$label.innerText;
     }
     return labelText;
+  }
+
+  protected runValidation() {
   }
 
 }

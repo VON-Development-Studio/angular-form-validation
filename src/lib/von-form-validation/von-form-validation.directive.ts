@@ -61,9 +61,12 @@ export class VonFormValidationDirective extends VonFormValidationBase implements
     }
 
     if (!valid) {
+      this.renderer.addClass(this.element.nativeElement, 'field__error');
       message = message.replace('${name}', labelText);
       this.messageEl.innerText = message;
       this.renderer.appendChild(this.wrapperEl, this.messageEl);
+    } else {
+      this.renderer.removeClass(this.element.nativeElement, 'field__error');
     }
     this.element.nativeElement.setAttribute('validation', valid);
   }
@@ -100,6 +103,14 @@ export class VonFormValidationDirective extends VonFormValidationBase implements
       validation = { isNotEqual: true };
     }
     return validation;
+  }
+
+  protected runValidation() {
+    if (this.validator.isEmpty
+      || this.validator.isNotEqual) {
+      return;
+    }
+    this.renderer.removeClass(this.element.nativeElement, 'field__error');
   }
 
 }

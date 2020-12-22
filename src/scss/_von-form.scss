@@ -1,4 +1,6 @@
-$form-error: #f00;
+$form-required: #f00 !default;
+$form-error: #f00 !default;
+$form-error-shadow: #f00 !default;
 
 .form__field {
   display: flex;
@@ -19,7 +21,7 @@ $form-error: #f00;
   &--required {
     &::before {
       content: "*";
-      color: $form-error;
+      color: $form-required;
     }
   }
 }
@@ -28,4 +30,17 @@ $form-error: #f00;
   display: flex;
   color: $form-error;
   margin: 5px 0 0;
+}
+
+.field__error {
+  &,
+  &:hover {
+    border-color: $form-error !important;
+  }
+
+  &:focus {
+    border-color: $form-error !important;
+    box-shadow: 0 0 5px 0px $form-error-shadow !important;
+    outline: 0 none;
+  }
 }
